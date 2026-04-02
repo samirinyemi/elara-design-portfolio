@@ -198,6 +198,7 @@ export default function FooterMinimal() {
 
   return (
     <section
+      id="contact"
       ref={container}
       className="relative flex flex-col z-10 overflow-hidden pt-20 pb-10 md:pt-28 md:pb-14"
       style={{

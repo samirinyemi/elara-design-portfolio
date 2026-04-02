@@ -119,8 +119,8 @@ export default function Navbar() {
       <nav ref={navRef} className="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-10 lg:px-16 py-8 text-xs uppercase tracking-widest font-bold mix-blend-difference text-white">
         <a href="#" className="nav-logo hover:text-accent transition-colors duration-300">Elara.</a>
         <div className="flex gap-4 md:gap-6 lg:gap-8">
-          <a href="#work" className="nav-link hover:text-accent transition-colors duration-300 hidden md:block">Work</a>
           <a href="#about" className="nav-link hover:text-accent transition-colors duration-300 hidden md:block">About</a>
+          <a href="#work" className="nav-link hover:text-accent transition-colors duration-300 hidden md:block">Work</a>
           <a href="#contact" className="nav-link hover:text-accent transition-colors duration-300 hidden md:block">Contact</a>
           <button
             ref={menuBtnRef}
@@ -146,12 +146,12 @@ export default function Navbar() {
         >
           {/* Navigation links */}
           <div className="flex flex-col gap-0">
-            <a href="#work" onClick={handleLinkClick} className="mobile-nav-item text-lg font-semibold uppercase tracking-widest text-white/90 py-4 hover:text-white transition-colors duration-200">
-              Work
-            </a>
-            <div className="w-full h-px bg-white/10" />
             <a href="#about" onClick={handleLinkClick} className="mobile-nav-item text-lg font-semibold uppercase tracking-widest text-white/90 py-4 hover:text-white transition-colors duration-200">
               About
+            </a>
+            <div className="w-full h-px bg-white/10" />
+            <a href="#work" onClick={handleLinkClick} className="mobile-nav-item text-lg font-semibold uppercase tracking-widest text-white/90 py-4 hover:text-white transition-colors duration-200">
+              Work
             </a>
             <div className="w-full h-px bg-white/10" />
             <a href="#contact" onClick={handleLinkClick} className="mobile-nav-item text-lg font-semibold uppercase tracking-widest text-white/90 py-4 hover:text-white transition-colors duration-200">

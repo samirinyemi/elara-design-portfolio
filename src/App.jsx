@@ -48,16 +48,18 @@ function App() {
   return (
     <>
       {loading && <Loader onComplete={() => setLoading(false)} />}
-      <div className="text-dark antialiased overflow-x-hidden">
-        <GridOverlay />
-        <Navbar />
-        <HeroCinematic />
-        <HeroDark />
-        <AboutSection />
-        <WorkSection />
-        <ProcessSection />
-        <FooterMinimal />
-      </div>
+      {!loading && (
+        <div className="text-dark antialiased overflow-x-hidden">
+          <GridOverlay />
+          <Navbar />
+          <HeroCinematic />
+          <HeroDark />
+          <AboutSection />
+          <WorkSection />
+          <ProcessSection />
+          <FooterMinimal />
+        </div>
+      )}
     </>
   )
 }
