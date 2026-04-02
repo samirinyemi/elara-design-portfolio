@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/fonts/Aeonik-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+body {
+  font-family: 'Aeonik', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
+@media (max-width: 768px) {
+  .fm-blob-svg path {
+    filter: none !important;
+  }
+}
+
+/* GPU acceleration for animated elements */
+section,
+.cine-bg,
+.cine-content,
+.dh-title,
+.dh-line,
+.about-img-wrap,
+.project-card,
+.card-media,
+.fm-blob-svg,
+nav {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce paint areas */
+video, img {
+  content-visibility: auto;
+}
+
+::selection {
+  background-color: #2d5f8a;
+  color: white;
+}
+
+/* Gradient text — mirrors the footer blob gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #b0c4de 40%, #2d5f8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient text on dark backgrounds */
+.text-gradient-dark {
+  background: linear-gradient(135deg, #b0c4de 0%, #2d5f8a 60%, #1a3d5c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient background for pills/buttons */
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #b0c4de 0%, #2d5f8a 100%);
+}
+
+.img-wrap img {
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 1.2s ease;
+}
+
+.img-wrap:hover img {
+  transform: scale(1.08);
+}
+
+@keyframes scrolldown {
+  0% { top: -100%; }
+  50% { top: 0; }
+  100% { top: 100%; }
+}
+
+.animate-scrolldown {
+  animation: scrolldown 2s ease-in-out infinite;
+}
