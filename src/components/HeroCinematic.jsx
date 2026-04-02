@@ -24,18 +24,14 @@ export default function HeroCinematic() {
       stagger: 0.2,
       ease: 'power4.out',
     }, 0.3)
-    // CTA buttons appear after headline reveals
-    .fromTo('.cine-cta',
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out' },
-      1.2
-    )
+    // CTA buttons fade in with stagger
+    .to('.cine-cta', {
+      opacity: 1, duration: 0.5, stagger: 0.2, ease: 'none',
+    }, 1.1)
     // Scroll indicator fade in
-    .fromTo('.cine-scroll',
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.5 },
-      1.6
-    )
+    .to('.cine-scroll', {
+      opacity: 1, duration: 0.5,
+    }, 1.6)
 
     // Parallax on scroll — background drifts slower with scale
     gsap.to('.cine-bg', {
@@ -93,7 +89,7 @@ export default function HeroCinematic() {
       {/* Main content — positioned over video */}
       <div className="cine-content relative z-10 h-full flex flex-col justify-end px-8 md:px-16 pb-12 md:pb-16">
         {/* Headline — large, left-aligned, capped at max size */}
-        <div className="max-w-5xl overflow-hidden">
+        <div className="max-w-5xl">
           <h1
             className="font-bold tracking-tighter leading-[0.95] text-white uppercase"
             style={{ fontSize: 'clamp(2.5rem, 8vw, 6.5rem)' }}
@@ -114,12 +110,14 @@ export default function HeroCinematic() {
             <a
               href="#contact"
               className="cine-cta px-7 py-3.5 bg-white/10 backdrop-blur-xl text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all duration-300"
+              style={{ opacity: 0 }}
             >
               Get in Touch
             </a>
             <a
               href="#work"
               className="cine-cta text-white/60 text-sm font-medium hover:text-white transition-colors duration-300"
+              style={{ opacity: 0 }}
             >
               View Selected Work
             </a>
@@ -128,7 +126,7 @@ export default function HeroCinematic() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="cine-scroll absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4">
+      <div className="cine-scroll absolute bottom-16 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4" style={{ opacity: 0 }}>
         <span className="text-[10px] font-mono uppercase tracking-widest text-white/40">Scroll</span>
         <div className="cine-scroll-line w-[1px] h-12 bg-white/20 overflow-hidden relative">
           <div className="w-full h-full bg-white absolute animate-scrolldown" />
