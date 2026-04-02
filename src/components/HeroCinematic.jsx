@@ -19,10 +19,9 @@ export default function HeroCinematic() {
     })
     // Headline lines clip-reveal with stagger — starts at 0.3s
     .from('.cine-line', {
-      y: '120%',
-      rotateX: 40,
-      duration: 1.4,
-      stagger: 0.12,
+      y: '110%',
+      duration: 1.2,
+      stagger: 0.2,
       ease: 'power4.out',
     }, 0.3)
     // CTA buttons appear alongside bottom bar
@@ -98,7 +97,7 @@ export default function HeroCinematic() {
         {/* Headline — large, left-aligned, capped at max size */}
         <div className="max-w-5xl overflow-hidden">
           <h1
-            className="font-bold tracking-tighter leading-[0.95] text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.7)] uppercase"
+            className="font-bold tracking-tighter leading-[0.95] text-white uppercase"
             style={{ fontSize: 'clamp(2.5rem, 8vw, 6.5rem)' }}
           >
             <div className="overflow-hidden py-[0.05em]">
