@@ -17,27 +17,25 @@ export default function HeroCinematic() {
       duration: 2.8,
       ease: 'power2.out',
     })
-    // Headline lines clip-reveal with stagger — starts at 0.3s
+    // Headline lines clip-reveal with stagger
     .from('.cine-line', {
       y: '110%',
       duration: 1.2,
       stagger: 0.2,
       ease: 'power4.out',
     }, 0.3)
-    // CTA buttons appear alongside bottom bar
-    .from('.cine-cta', {
-      y: 20,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: 'power3.out',
-    }, 0.8)
+    // CTA buttons appear after headline reveals
+    .fromTo('.cine-cta',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out' },
+      1.2
+    )
     // Scroll indicator fade in
-    .from('.cine-scroll', {
-      opacity: 0,
-      y: 10,
-      duration: 0.5,
-    }, 1.0)
+    .fromTo('.cine-scroll',
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5 },
+      1.6
+    )
 
     // Parallax on scroll — background drifts slower with scale
     gsap.to('.cine-bg', {
@@ -112,20 +110,18 @@ export default function HeroCinematic() {
           </h1>
 
           {/* CTA buttons */}
-          <div className="flex items-center gap-4 mt-8">
-            <a
-              href="#work"
-              className="cine-cta px-7 py-3.5 bg-white/15 backdrop-blur-md text-white text-sm font-medium rounded-full border border-white/20 hover:bg-white/25 transition-all duration-300"
-            >
-              View Selected Work
-            </a>
-          </div>
-          <div className="mt-3">
+          <div className="flex items-center gap-5 mt-8">
             <a
               href="#contact"
-              className="cine-cta py-2 text-white/80 text-sm font-medium hover:text-white transition-colors duration-300"
+              className="cine-cta px-7 py-3.5 bg-white/10 backdrop-blur-xl text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all duration-300"
             >
               Get in Touch
+            </a>
+            <a
+              href="#work"
+              className="cine-cta text-white/60 text-sm font-medium hover:text-white transition-colors duration-300"
+            >
+              View Selected Work
             </a>
           </div>
         </div>
